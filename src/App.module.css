@@ -67,3 +67,17 @@
     }
   }
 }
+
+.winner {
+  /* border: 2px rgb(66, 66, 66) solid;
+  padding: 16px;
+  border-radius: 8px; */
+  margin: 0;
+  /* max-width: 2000px; */
+}
+
+.disclaimer {
+  & > p {
+    font-size: 0.7em;
+  }
+}

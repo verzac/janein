@@ -48,8 +48,8 @@ function App() {
             government.
           </p>
           <p>
+            Access this site on your phone when you're playing Secret Hilter{" "}
             <s>
-              Access this site on your phone when you're playing Secret Hilter
               so that poor sod doesn't have to keep reshuffling the voting
               ballots.
             </s>
@@ -69,7 +69,7 @@ function App() {
 
       {voteState === "done" && (
         <div className="fadeIn">
-          <h1>{winner.toUpperCase()}!</h1>
+          <h1 className={styles.winner}>{winner.toUpperCase()}!</h1>
           {winner === "ja" && (
             <p>
               Congratulations to the new government for winning the election.
@@ -88,18 +88,34 @@ function App() {
           <button onClick={onDone}>Finish voting</button>
         )}
       </div>
-      <div className={clsx(styles.row, styles.rowDivider)}>
-        <a href="https://patreon.com/verzac" target="_blank" rel="noopener">
-          Buy me a coffee
-        </a>
-        <a
-          href="https://github.com/verzac/janein"
-          target="_blank"
-          rel="noopener"
-        >
-          Github
-        </a>
-      </div>
+      <footer>
+        <div className={clsx(styles.row, styles.rowDivider)}>
+          <a href="https://patreon.com/verzac" target="_blank" rel="noopener">
+            Buy me a coffee
+          </a>
+          <a
+            href="https://github.com/verzac/janein"
+            target="_blank"
+            rel="noopener"
+          >
+            Github
+          </a>
+        </div>
+        <div className={styles.disclaimer}>
+          <p>
+            Secret Hitler is a game created by GOAT, WOLF, & CABBAGE. Visit
+            their site{" "}
+            <a
+              href="https://www.secrethitler.com/"
+              target="_blank"
+              rel="noopener"
+            >
+              here
+            </a>
+            .
+          </p>
+        </div>
+      </footer>
 
       {/** debugging is not fun */}
       {/* <div> */}
