@@ -1,11 +1,9 @@
 import { useState } from "react";
 import "./App.css";
 import styles from "./App.module.css";
-import { Card } from "./components/Card";
-
-type VoteState = "ongoing" | "notstarted" | "done";
-
-type Vote = "ja" | "nein";
+import { ButtonCard } from "./components/ButtonCard";
+import { Vote, VoteState } from "./types";
+import { VoteCounter } from "./components/VoteCounter";
 
 function App() {
   const [votes, setVotes] = useState<Vote[]>([]);
@@ -20,11 +18,14 @@ function App() {
   const onNein = () => {
     setVotes((arr) => arr.concat("nein"));
   };
+  const onDone = () => {
+    setVoteState("done");
+  };
   return (
     <div className={styles.root}>
-      <h1>Ja, Nein?</h1>
       {voteState === "notstarted" && (
         <>
+          <h1>Ja, Nein?</h1>
           <p>
             A companion app that helps you vote for (or against) a fascist
             government.
@@ -41,21 +42,25 @@ function App() {
       {voteState === "ongoing" && (
         <div className={styles.ongoing}>
           <div className={styles.votingContainer}>
-            <Card onClick={onJa}>Ja!</Card>
-            <Card onClick={onNein}>Nein!</Card>
+            <ButtonCard onClick={onJa}>Ja!</ButtonCard>
+            <ButtonCard onClick={onNein}>Nein!</ButtonCard>
           </div>
-          <h2>Number of Votes: {votes.length}</h2>
+          <VoteCounter votes={votes} />
+          <h2 className={styles.voteCount}>Number of Votes: {votes.length}</h2>
         </div>
       )}
 
-      <div>
+      <div className={styles.actions}>
         <button onClick={onNewElection}>Start a new vote</button>
+        {voteState === "ongoing" && (
+          <button onClick={onDone}>Finish voting</button>
+        )}
       </div>
 
       {/** debugging is not fun */}
       <div>
         <p>voteState: {voteState}</p>
-        <p>votes: {JSON.stringify(votes)}</p>
+        {/* <p>votes: {JSON.stringify(votes)}</p> */}
       </div>
     </div>
   );

@@ -15,9 +15,22 @@
   }
 }
 
+.voteCount {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
 .ongoing {
   /* flex: 1; */
   /* width: 100%; */
+}
+
+.actions {
+  & > * {
+    &:not(:last-child) {
+      margin-right: 8px;
+    }
+  }
 }
 
 .votingContainer {
