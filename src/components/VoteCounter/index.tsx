@@ -4,14 +4,17 @@ import styles from "./index.module.css";
 
 interface VoteCounterProps {
   votes: Vote[];
+  hideCounter?: boolean;
 }
 
-export function VoteCounter({ votes }: VoteCounterProps) {
+export function VoteCounter({ votes, hideCounter }: VoteCounterProps) {
   return (
     <div className={styles.root}>
-      {votes.map((_, idx) => (
+      {votes.map((vote, idx) => (
         <div key={idx} className={clsx(styles.voteCard, styles.fadeIn)}>
-          ?
+          <p className={styles.voteLabel}>
+            {hideCounter ? "?" : `${vote.toUpperCase()}!`}
+          </p>
         </div>
       ))}
     </div>

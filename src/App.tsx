@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import "./App.css";
 import styles from "./App.module.css";
 import { ButtonCard } from "./components/ButtonCard";
@@ -21,6 +21,22 @@ function App() {
   const onDone = () => {
     setVoteState("done");
   };
+  const winner: Vote = useMemo(() => {
+    let jaCount = 0;
+    let neinCount = 0;
+    votes.forEach((v) => {
+      if (v === "ja") {
+        jaCount += 1;
+      } else {
+        neinCount += 1;
+      }
+    });
+    return jaCount > neinCount ? "ja" : "nein";
+  }, [votes]);
+  const shuffledVotes = useMemo(
+    () => votes.concat().sort((a) => (a !== "ja" ? 1 : -1)),
+    [votes]
+  );
   return (
     <div className={styles.root}>
       {voteState === "notstarted" && (
@@ -45,8 +61,16 @@ function App() {
             <ButtonCard onClick={onJa}>Ja!</ButtonCard>
             <ButtonCard onClick={onNein}>Nein!</ButtonCard>
           </div>
-          <VoteCounter votes={votes} />
+          <VoteCounter votes={votes} hideCounter />
           <h2 className={styles.voteCount}>Number of Votes: {votes.length}</h2>
+        </div>
+      )}
+
+      {voteState === "done" && (
+        <div>
+          <h1>Result: {winner.toUpperCase()}!</h1>
+          <p>Congratulations to the new government for winning the election.</p>
+          <VoteCounter votes={shuffledVotes} />
         </div>
       )}
 
@@ -58,10 +82,10 @@ function App() {
       </div>
 
       {/** debugging is not fun */}
-      <div>
-        <p>voteState: {voteState}</p>
-        {/* <p>votes: {JSON.stringify(votes)}</p> */}
-      </div>
+      {/* <div> */}
+      {/* <p>voteState: {voteState}</p> */}
+      {/* <p>votes: {JSON.stringify(votes)}</p> */}
+      {/* </div> */}
     </div>
   );
 }
