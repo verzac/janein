@@ -69,7 +69,12 @@ function App() {
       {voteState === "done" && (
         <div>
           <h1>Result: {winner.toUpperCase()}!</h1>
-          <p>Congratulations to the new government for winning the election.</p>
+          {winner === "ja" && (
+            <p>
+              Congratulations to the new government for winning the election.
+            </p>
+          )}
+          {winner === "nein" && <p>Oops, better luck next time.</p>}
           <VoteCounter votes={shuffledVotes} />
         </div>
       )}
