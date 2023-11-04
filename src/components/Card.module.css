@@ -1,0 +1,18 @@
+.root {
+  background-color: rgb(66, 66, 66);
+  height: 256px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border-color: rgb(32, 32, 32);
+  border-width: 2px;
+  border-style: solid;
+}
+
+.label {
+  font-size: 8em;
+  font-weight: 700;
+  /* letter-spacing: 0.1em; */
+}
