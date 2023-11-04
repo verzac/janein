@@ -27,22 +27,3 @@
   margin: 0;
   font-weight: 700;
 }
-
-/* Define a CSS animation for fading in */
-@keyframes fadeIn {
-  from {
-    opacity: 0; /* Start with full transparency (invisible) */
-  }
-  to {
-    opacity: 1; /* End with full opacity (visible) */
-  }
-}
-
-/* Apply the animation to your element */
-.fadeIn {
-  animation-name: fadeIn; /* Use the defined animation */
-  animation-duration: 0.5s; /* Set the duration of the animation */
-  animation-timing-function: ease-in-out; /* Use a smooth timing function */
-  animation-fill-mode: forwards; /* Retain the final state of the animation */
-  opacity: 0; /* Set the initial opacity to 0 (invisible) */
-}

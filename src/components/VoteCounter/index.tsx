@@ -11,7 +11,7 @@ export function VoteCounter({ votes, hideCounter }: VoteCounterProps) {
   return (
     <div className={styles.root}>
       {votes.map((vote, idx) => (
-        <div key={idx} className={clsx(styles.voteCard, styles.fadeIn)}>
+        <div key={idx} className={clsx(styles.voteCard, "fadeIn")}>
           <p className={styles.voteLabel}>
             {hideCounter ? "?" : `${vote.toUpperCase()}!`}
           </p>

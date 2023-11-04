@@ -4,6 +4,7 @@ import styles from "./App.module.css";
 import { ButtonCard } from "./components/ButtonCard";
 import { Vote, VoteState } from "./types";
 import { VoteCounter } from "./components/VoteCounter";
+import clsx from "clsx";
 
 function App() {
   const [votes, setVotes] = useState<Vote[]>([]);
@@ -56,7 +57,7 @@ function App() {
         </>
       )}
       {voteState === "ongoing" && (
-        <div className={styles.ongoing}>
+        <div className={clsx(styles.ongoing, "fadeIn")}>
           <div className={styles.votingContainer}>
             <ButtonCard onClick={onJa}>Ja!</ButtonCard>
             <ButtonCard onClick={onNein}>Nein!</ButtonCard>
@@ -67,8 +68,8 @@ function App() {
       )}
 
       {voteState === "done" && (
-        <div>
-          <h1>Result: {winner.toUpperCase()}!</h1>
+        <div className="fadeIn">
+          <h1>{winner.toUpperCase()}!</h1>
           {winner === "ja" && (
             <p>
               Congratulations to the new government for winning the election.
@@ -79,11 +80,25 @@ function App() {
         </div>
       )}
 
-      <div className={styles.actions}>
-        <button onClick={onNewElection}>Start a new vote</button>
+      <div className={styles.row}>
+        {voteState !== "ongoing" && (
+          <button onClick={onNewElection}>Start a new vote</button>
+        )}
         {voteState === "ongoing" && (
           <button onClick={onDone}>Finish voting</button>
         )}
+      </div>
+      <div className={clsx(styles.row, styles.rowDivider)}>
+        <a href="https://patreon.com/verzac" target="_blank" rel="noopener">
+          Buy me a coffee
+        </a>
+        <a
+          href="https://github.com/verzac/janein"
+          target="_blank"
+          rel="noopener"
+        >
+          Github
+        </a>
       </div>
 
       {/** debugging is not fun */}
