@@ -45,7 +45,7 @@ function App() {
           <h1>Ja, Nein?</h1>
           <p>
             A companion app that helps you vote for (or against) a fascist
-            government.
+            government when playing Secret Hitler.
           </p>
           <p>
             Access this site on your phone when you're playing Secret Hilter{" "}
