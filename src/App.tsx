@@ -59,8 +59,12 @@ function App() {
       {voteState === "ongoing" && (
         <div className={clsx(styles.ongoing, "fadeIn")}>
           <div className={styles.votingContainer}>
-            <ButtonCard onClick={onJa}>Ja!</ButtonCard>
-            <ButtonCard onClick={onNein}>Nein!</ButtonCard>
+            <ButtonCard onClick={onJa} subtitle="Yes">
+              Ja!
+            </ButtonCard>
+            <ButtonCard onClick={onNein} subtitle="No">
+              Nein!
+            </ButtonCard>
           </div>
           <VoteCounter votes={votes} hideCounter />
           <h2 className={styles.voteCount}>Number of Votes: {votes.length}</h2>
@@ -69,7 +73,9 @@ function App() {
 
       {voteState === "done" && (
         <div className="fadeIn">
-          <h1 className={styles.winner}>{winner.toUpperCase()}!</h1>
+          <h1 className={styles.winner}>
+            {winner.toUpperCase()}! ({winner === "ja" ? "Yes" : "No"})
+          </h1>
           {winner === "ja" && (
             <p>
               Congratulations to the new government for winning the election.
