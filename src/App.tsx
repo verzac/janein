@@ -118,7 +118,13 @@ function App() {
             </a>
             .
           </p>
-          <p>This site (janein.cc) is not affiliated with the original game.</p>
+          <p>
+            This site (janein.cc) is not affiliated with the original game. Get
+            in touch @{" "}
+            <a href="mailto:little.big.apps.studio@gmail.com">
+              little.big.apps.studio@gmail.com
+            </a>
+          </p>
         </div>
       </footer>
 
