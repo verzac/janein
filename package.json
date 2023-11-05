@@ -8,7 +8,7 @@
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "deploy:production": "aws s3 sync --delete dist/ s3://janein.cc",
+    "deploy:production": "aws s3 sync dist/ s3://janein.cc",
     "release": "rm -rf dist/ && yarn build && yarn deploy:production"
   },
   "dependencies": {
