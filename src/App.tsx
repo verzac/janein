@@ -100,11 +100,15 @@ function App() {
           >
             Github
           </a>
+          <a href="https://bento.me/bentanone" target="_blank" rel="noopener">
+            Author
+          </a>
         </div>
         <div className={styles.disclaimer}>
           <p>
-            Secret Hitler is a game created by GOAT, WOLF, & CABBAGE. Visit
-            their site{" "}
+            Secret Hitler is a game created by GOAT, WOLF, & CABBAGE. It is a
+            social deduction game for 5-10 people about finding and stopping
+            Hitler and a fascist takeover. Visit their site{" "}
             <a
               href="https://www.secrethitler.com/"
               target="_blank"
@@ -114,6 +118,7 @@ function App() {
             </a>
             .
           </p>
+          <p>This site (janein.cc) is not affiliated with the original game.</p>
         </div>
       </footer>
 
