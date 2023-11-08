@@ -54,6 +54,25 @@ function App() {
               ballots.
             </s>
           </p>
+          <section className={styles.instruction}>
+            <h2>How to use</h2>
+            <ol className={styles.instructionOrderedList}>
+              <li>Nominate someone's phone</li>
+              <li>
+                Load the site{" "}
+                <a href="https://www.janein.cc">https://www.janein.cc</a> on
+                said phone
+              </li>
+              <li>Press "Start a new vote"</li>
+              <li>Vote.</li>
+              <li>
+                Once a person is done voting, pass the phone onto the next
+                person.
+              </li>
+              <li>Repeat step 4-5 until everyone has voted.</li>
+              <li>Press "Finish voting" and get your results.</li>
+            </ol>
+          </section>
         </>
       )}
       {voteState === "ongoing" && (

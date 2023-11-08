@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding: 16px;
   width: calc(100% - 32px);
   flex: 1;
@@ -31,6 +32,28 @@
       margin-right: 8px;
     }
   }
+}
+
+.instruction {
+  background-color: rgb(66, 66, 66);
+  max-width: 530px;
+  padding-bottom: 16px;
+  padding-right: 16px;
+  border-radius: 8px;
+  transition: height 0.5s;
+  margin: 8px 0px;
+  & > h2 {
+    /* text-align: left; */
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+}
+
+.instructionOrderedList {
+  display: inline-block;
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .rowDivider {
