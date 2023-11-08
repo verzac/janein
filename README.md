@@ -1,27 +1,33 @@
-# React + TypeScript + Vite
+# Ja / Nein - companion voting app for Secret Hitler
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+https://www.janein.cc
 
-Currently, two official plugins are available:
+A companion app that helps you vote for (or against) a fascist
+government when playing Secret Hitler.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# How to use
 
-## Expanding the ESLint configuration
+1. Nominate someone's phone
+2. Load the site https://www.janein.cc on said phone
+3. Press "Start a new vote"
+4. Vote.
+5. Once a person is done voting, pass the phone ontoto the next person.
+6. Repeat step 4-5 until everyone has voted.
+7. Press "Finish voting" and get your results.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+![app screenshot](.assets/janein.jpg)
 
-- Configure the top-level `parserOptions` property like this:
+# Development
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+```bash
+yarn # installs the thing
+yarn dev # run it locally on http://localhost:5173/
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+# Contributions
+
+Just chuck a PR / Issue and I'll have a look at it. I promise I won't be a fascist about it.
+
+# Privacy Policy
+
+We don't collect any data other than page visits. Can't be bothered tbh.
